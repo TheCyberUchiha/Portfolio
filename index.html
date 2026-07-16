@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darshak Bhalgamiya | Cyber Security Student</title>
+<meta name="description" content="Personal portfolio of Darshak Bhalgamiya, a passionate Cyber Security student.">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- 3D BACKGROUND -->
+<div id="app" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- LEFT SIDEBAR NAV -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-avatar">
+    <img src="portfolio_web_design_1777282082709.png" alt="Avatar">
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home" class="nav-link active" data-section="home"><i class="fas fa-home"></i> <span>HOME</span></a></li>
+    <li><a href="#about" class="nav-link" data-section="about"><i class="fas fa-user"></i> <span>ABOUT ME</span></a></li>
+    <li><a href="#resume" class="nav-link" data-section="resume"><i class="fas fa-file-alt"></i> <span>RESUME</span></a></li>
+    <li><a href="#portfolio" class="nav-link" data-section="portfolio"><i class="fas fa-code"></i> <span>PROJECTS</span></a></li>
+    <li><a href="#testimonials" class="nav-link" data-section="testimonials"><i class="fas fa-star"></i> <span>FEEDBACK</span></a></li>
+    <li><a href="#contact" class="nav-link" data-section="contact"><i class="fas fa-envelope"></i> <span>CONTACT</span></a></li>
+  </ul>
+  <div class="sidebar-bottom">
+    <span class="dot"></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
+</nav>
+
+<!-- RIGHT SOCIAL BAR -->
+<div class="social-bar">
+  <a href="https://github.com/TheCyberUchiha" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+  <a href="https://www.linkedin.com/in/darshak-bhalgamiya-3179b8379" target="_blank" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
+<!-- HAMBURGER (mobile) -->
+<button class="hamburger" id="hamburger" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- ===== 3D SCROLL CUBE ===== -->
+<div id="scroll-cube" aria-hidden="true">
+  <div id="sc-glow"></div>
+  <div id="sc-inner">
+
+    <!-- FRONT: Home -->
+    <div class="sc-face sc-front" data-color="#67e8f9">
+      <div class="sc-scan"></div>
+      <i class="fas fa-home sc-icon"></i>
+      <h5 class="sc-title">HOME</h5>
+      <ul class="sc-list">
+        <li>Darshak Bhalgamiya</li>
+        <li>Cyber Security Student</li>
+        <li>Parul University</li>
+      </ul>
+      <span class="sc-badge">01 / 06</span>
+    </div>
+
+    <!-- RIGHT: About -->
+    <div class="sc-face sc-right" data-color="#a78bfa">
+      <div class="sc-scan"></div>
+      <i class="fas fa-user sc-icon"></i>
+      <h5 class="sc-title">ABOUT</h5>
+      <ul class="sc-list">
+        <li>Second-Year B.Tech CSE</li>
+        <li>Science Fair Winner</li>
+        <li>Consistency over Speed</li>
+      </ul>
+      <span class="sc-badge">02 / 06</span>
+    </div>
+
+    <!-- BACK: Resume -->
+    <div class="sc-face sc-back" data-color="#34d399">
+      <div class="sc-scan"></div>
+      <i class="fas fa-file-alt sc-icon"></i>
+      <h5 class="sc-title">RESUME</h5>
+      <ul class="sc-list">
+        <li>Top Performer - Corizo</li>
+        <li>SIH Team Leader</li>
+        <li>7+ Certifications</li>
+      </ul>
+      <span class="sc-badge">03 / 06</span>
+    </div>
+
+    <!-- LEFT: Portfolio -->
+    <div class="sc-face sc-left" data-color="#fde68a">
+      <div class="sc-scan"></div>
+      <i class="fas fa-code sc-icon"></i>
+      <h5 class="sc-title">PROJECTS</h5>
+      <ul class="sc-list">
+        <li>MathVerse</li>
+        <li>OmniGupt · URL Locker</li>
+        <li>3+ Projects</li>
+      </ul>
+      <span class="sc-badge">04 / 06</span>
+    </div>
+
+    <!-- TOP: Testimonials -->
+    <div class="sc-face sc-top" data-color="#f87171">
+      <div class="sc-scan"></div>
+      <i class="fas fa-star sc-icon"></i>
+      <h5 class="sc-title">FEEDBACK</h5>
+      <ul class="sc-list">
+        <li>Mentor - Science Fair</li>
+        <li>Hackathon Teammate</li>
+        <li>Project Collaborator</li>
+      </ul>
+      <span class="sc-badge">05 / 06</span>
+    </div>
+
+    <!-- BOTTOM: Contact -->
+    <div class="sc-face sc-bottom" data-color="#fb923c">
+      <div class="sc-scan"></div>
+      <i class="fas fa-envelope sc-icon"></i>
+      <h5 class="sc-title">CONTACT</h5>
+      <ul class="sc-list">
+        <li>+91 8200505250</li>
+        <li>Vadodara, Gujarat</li>
+      </ul>
+      <span class="sc-badge">06 / 06</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main-content">
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="section hero-section">
+    <div class="hero-text" data-scroll-speed="0.15">
+      <p class="hero-greeting">HI THERE! "IT'S YOU VS YOU"</p>
+      <h1 class="hero-name">I'M <span class="accent">DARSHAK</span></h1>
+      <p class="hero-role">Cyber Security Student / Developer</p>
+      <p class="hero-bio">B.Tech CSE student at Parul University, passionate about cybersecurity, ethical hacking, and building secure digital solutions. Learning step by step, building fundamentals before complexity.</p>
+      <div class="hero-cta-group">
+        <a href="#about" class="btn-primary">MORE ABOUT ME <i class="fas fa-arrow-right"></i></a>
+        <a href="Darshak_Bhalgamiya_CV.pdf" download class="btn-secondary" id="cvDownloadBtn"><i class="fas fa-download"></i> DOWNLOAD CV</a>
+      </div>
+    </div>
+    <div class="hero-image-wrap" data-scroll-speed="-0.1">
+      <div class="hero-image-bg"></div>
+      <img class="hero-photo" src="portfolio_web_design_1777282082709.png" alt="Portfolio Photo">
+      <div class="hero-photo-placeholder" style="display:none">
+        <i class="fas fa-user" style="font-size:6rem;color:#F5C518"></i>
+      </div>
+      <div class="hero-badge">
+        <i class="fas fa-shield-alt"></i>
+        <span>Cyber Student</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about-section">
+    <h2 class="section-title">ABOUT ME</h2>
+    <div class="about-grid">
+      <div class="about-intro">
+        <p class="about-tagline">I'm <strong>Darshak Bhalgamiya</strong>, Cyber Security Student at Parul University</p>
+        <p class="about-desc">I am a second-year B.Tech Cyber Security student with a clear goal of building a strong foundation in cybersecurity. My journey started through a State-Level Science Fair (Garbage Management Technique) where I gained real-world experience in communication, leadership, and problem-solving under pressure.</p>
+        <p class="about-desc">From there, I built my technical foundation step by step - programming (C, C++, Java), web development (HTML, CSS, JavaScript), and now diving deeper into advanced cybersecurity concepts. I believe in learning deeply, staying consistent, and improving every day.</p>
+        <blockquote class="about-quote">"It's you vs you" - Focus on fundamentals. Consistency over speed. Learning over showing.</blockquote>
+        <div class="what-i-do">
+          <h4>What I Do!</h4>
+          <div class="skills-grid">
+            <div class="skill-item"><i class="fas fa-shield-alt"></i><span>Cyber Security</span></div>
+            <div class="skill-item"><i class="fas fa-code"></i><span>Web Development</span></div>
+            <div class="skill-item"><i class="fas fa-network-wired"></i><span>Networking</span></div>
+            <div class="skill-item"><i class="fas fa-terminal"></i><span>Linux & Kali</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card dark">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">PROJECTS</span>
+        </div>
+        <div class="stat-card dark">
+          <span class="stat-num">7+</span>
+          <span class="stat-label">CERTIFICATIONS</span>
+        </div>
+        <div class="stat-card dark">
+          <span class="stat-num">2+</span>
+          <span class="stat-label">HACKATHONS</span>
+        </div>
+        <div class="stat-card dark">
+          <span class="stat-num">1</span>
+          <span class="stat-label">INTERNSHIP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume" class="section resume-section">
+    <h2 class="section-title">RESUME</h2>
+    <div class="resume-grid">
+      <div class="resume-col">
+        <h3 class="resume-col-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2025 - 2029</span>
+              <h4>B.Tech CSE - Cyber Security</h4>
+              <p>Parul University · Vadodara</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2023 - 2025</span>
+              <h4>12th Science <span class="tl-grade">87%</span></h4>
+              <p>Rosary School · Vadodara</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2021 - 2023</span>
+              <h4>10th <span class="tl-grade">91%</span></h4>
+              <p>Nutan Vidhyalaya · Vadodara</p>
+            </div>
+          </div>
+        </div>
+        <h3 class="resume-col-title mt"><i class="fas fa-briefcase"></i> EXPERIENCE</h3>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">Mar 2026 - Apr 2026</span>
+              <h4>Cyber Security Intern</h4>
+              <p>Corizo (Top Performer)</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2025</span>
+              <h4>Smart India Hackathon</h4>
+              <p>Team Leader - Cyber Knights</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot"></div>
+            <div class="tl-content">
+              <span class="tl-date">2025</span>
+              <h4>Vadodara Hackathon 6.0</h4>
+              <p>Participant & Problem Solver</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="resume-col">
+        <h3 class="resume-col-title"><i class="fas fa-wrench"></i> SKILLS</h3>
+        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase;">Programming Skills</h4>
+        <div class="skill-rings-grid">
+          <div class="skill-ring-card" data-percent="100" style="--clr:#3b82f6">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fas fa-code"></i></div>
+            <p class="ring-label">C</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#a78bfa">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fas fa-file-code"></i></div>
+            <p class="ring-label">C++</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#ef4444">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fab fa-java"></i></div>
+            <p class="ring-label">JAVA</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#f97316">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fab fa-html5"></i></div>
+            <p class="ring-label">HTML</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#3b82f6">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fab fa-css3-alt"></i></div>
+            <p class="ring-label">CSS</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#fde68a">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fab fa-js-square"></i></div>
+            <p class="ring-label">JAVASCRIPT</p>
+          </div>
+        </div>
+        <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 1.5rem;">Cyber Skills</h4>
+        <div class="skill-rings-grid">
+          <div class="skill-ring-card" data-percent="100" style="--clr:#34d399">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fas fa-network-wired"></i></div>
+            <p class="ring-label">NETWORKING</p>
+          </div>
+          <div class="skill-ring-card" data-percent="100" style="--clr:#f87171">
+            <svg viewBox="0 0 100 100" class="ring-svg"><circle class="ring-track" cx="50" cy="50" r="40"/><circle class="ring-fill" cx="50" cy="50" r="40" style="--dash:251.2"/></svg>
+            <div class="ring-center"><i class="fas fa-search"></i></div>
+            <p class="ring-label">NMAP</p>
+          </div>
+        </div>
+        <h3 class="resume-col-title mt"><i class="fas fa-certificate"></i> CERTIFICATIONS</h3>
+        <div class="cert-grid" style="margin-bottom: 2rem;">
+          <div class="cert-pill"><i class="fas fa-shield-alt"></i><span>Corizo Cyber Security Training &amp; Internship</span></div>
+          <div class="cert-pill"><i class="fab fa-html5"></i><span>Pearson HTML &amp; CSS</span></div>
+          <div class="cert-pill"><i class="fas fa-code"></i><span>C/C++ Certification</span></div>
+          <div class="cert-pill"><i class="fab fa-js"></i><span>JavaScript Certification</span></div>
+        </div>
+        <h3 class="resume-col-title mt"><i class="fas fa-bolt"></i> CORE &amp; SOFT SKILLS</h3>
+        <div class="soft-tags">
+          <span class="stag">Leadership</span><span class="stag">Problem Solving</span><span class="stag">Teamwork</span><span class="stag">Presentation</span><span class="stag">Communication</span>
+          <span class="stag tool">Cyber Security Fundamentals</span><span class="stag tool">Networking</span><span class="stag tool">Nmap</span>
+          <span class="stag tool">Java</span><span class="stag tool">Kali Linux</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PORTFOLIO ===== -->
+  <section id="portfolio" class="section portfolio-section">
+    <h2 class="section-title">PROJECTS</h2>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      
+      <!-- MathVerse -->
+      <div class="port-card tech-card parallax-card" data-cat="web" data-scroll-speed="0.05">
+        <div class="card-glow"></div>
+        <div class="tc-content">
+          <div class="tc-header">
+            <div class="tc-icon-wrap"><i class="fas fa-calculator"></i></div>
+            <div class="tc-links">
+              <a href="https://github.com/TheCyberUchiha/MathVerse" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://thecyberuchiha.github.io/MathVerse/" target="_blank" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="tc-title">MathVerse</h3>
+          <p class="tc-desc">Interactive math learning platform. Visual-based understanding with dynamic graphs and problem-solving modules.</p>
+          <div class="tc-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Data Viz</span>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- OmniGupt -->
+      <div class="port-card tech-card parallax-card" data-cat="branding" data-scroll-speed="0.02">
+        <div class="card-glow"></div>
+        <div class="tc-content">
+          <div class="tc-header">
+            <div class="tc-icon-wrap"><i class="fas fa-user-secret"></i></div>
+            <div class="tc-links">
+              <a href="https://github.com/TheCyberUchiha/OmniGupt" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://thecyberuchiha.github.io/OmniGupt/" target="_blank" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <h3 class="tc-title">OmniGupt</h3>
+          <p class="tc-desc">Secure encryption and decryption web application utilizing modern cryptographic algorithms for data protection.</p>
+          <div class="tc-tags">
+            <span>Cryptography</span><span>JavaScript</span><span>Security</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- URL Locker -->
+      <div class="port-card tech-card parallax-card" data-cat="app" data-scroll-speed="0.04">
+        <div class="card-glow"></div>
+        <div class="tc-content">
+          <div class="tc-header">
+            <div class="tc-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+            <div class="tc-links">
+              <a href="#" onclick="alert('This repository is private for security reasons.'); return false;" title="Private Repo"><i class="fas fa-lock"></i></a>
+            </div>
+          </div>
+          <h3 class="tc-title">URL Locker</h3>
+          <p class="tc-desc">Privacy-focused URL blocking web extension to control and restrict access to specific websites for enhanced productivity.</p>
+          <div class="tc-tags">
+            <span>Web Extension</span><span>Privacy</span><span>Security</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section testimonials-section">
+    <h2 class="section-title">TESTIMONIALS & FEEDBACK</h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Darshak demonstrated excellent leadership and problem-solving skills during the State-Level Science Fair. His ability to handle real-world questions under pressure is highly commendable."</p>
+        <div class="testi-author">
+          <img src="https://ui-avatars.com/api/?name=VP&background=F5C518&color=000&size=60&bold=true" alt="Vijay Prajapati">
+          <div>
+            <strong>Vijay Prajapati Sir</strong>
+            <span>Mentor, Nutan Vidhyalaya</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Working with Darshak at the Smart India Hackathon was a great experience. As a team leader, he brings out the best in everyone and ensures we stay focused on the fundamentals."</p>
+        <div class="testi-author">
+          <img src="https://ui-avatars.com/api/?name=NS&background=222&color=F5C518&size=60&bold=true" alt="Nayan Sadariya">
+          <div>
+            <strong>Nayan Sadariya</strong>
+            <span>Teammate, Cyber Knights</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+        <p class="testi-text">"Darshak is consistent and deeply passionate about cybersecurity. His mindset of 'learning deeply and improving every day' reflects in the quality of work he produces."</p>
+        <div class="testi-author">
+          <img src="https://ui-avatars.com/api/?name=HP&background=F5C518&color=000&size=60&bold=true" alt="Harsh Prajapati">
+          <div>
+            <strong>Harsh Prajapati</strong>
+            <span>Project Collaborator</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <h2 class="section-title">CONTACT</h2>
+    <p class="contact-sub">Feel free to contact me! I'm always open to discussing new projects, creative ideas or opportunities.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><strong>Location</strong><span>Vadodara, Gujarat</span></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div><strong>Response Time</strong><span>Within 24 hours</span></div>
+        </div>
+        <div class="contact-item">
+          <a href="https://github.com/TheCyberUchiha" target="_blank" style="display:flex;align-items:center;gap:1rem;color:inherit;text-decoration:none">
+            <div class="ci-icon"><i class="fab fa-github"></i></div>
+            <div><strong>GitHub</strong><span>TheCyberUchiha</span></div>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://www.linkedin.com/in/darshak-bhalgamiya-3179b8379" target="_blank" style="display:flex;align-items:center;gap:1rem;color:inherit;text-decoration:none">
+            <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
+            <div><strong>LinkedIn</strong><span>darshak-bhalgamiya</span></div>
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <input type="text" name="subject" placeholder="Subject">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn-primary">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+    <!-- HIGHLIGHTS -->
+    <div class="highlights-strip">
+      <div class="hl-item"><i class="fas fa-trophy"></i><span>Top Performer - Corizo Internship</span></div>
+      <div class="hl-item"><i class="fas fa-star"></i><span>SIH Institute Level Nominee</span></div>
+      <div class="hl-item"><i class="fas fa-users"></i><span>Team Leader - Cyber Knights</span></div>
+      <div class="hl-item"><i class="fas fa-flask"></i><span>State-Level Science Fair</span></div>
+    </div>
+    <p class="thanks-text">THANKS FOR VISITING! &nbsp;·&nbsp; "IT'S YOU VS YOU"</p>
+  </section>
+
+</main>
+
+<!-- OVERLAY (mobile nav) -->
+<div class="overlay" id="overlay"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+<script src="script.js"></script>
+<script src="three-bg.js" defer></script>
+</body>
+</html>
+
+
