@@ -33,10 +33,15 @@ a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 ul { list-style: none; }
 
-/* ===== 3D BACKGROUND ===== */
-#app {
-  position: fixed; inset: 0; z-index: 0;
+/* ===== CYBER NETWORK BACKGROUND CANVAS ===== */
+#cyber-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
   pointer-events: none;
+  display: block;
 }
 canvas { display: block; }
 
@@ -668,6 +673,16 @@ canvas { display: block; }
 }
 .skill-item i { color: var(--accent); font-size: 1rem; }
 
+/* ===== STAT CARD ANIMATIONS ===== */
+@keyframes statFadeUp {
+  from { opacity: 0; transform: translateY(28px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes statFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -679,26 +694,33 @@ canvas { display: block; }
   padding: 1.8rem 1.2rem;
   border-radius: 8px;
   text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  border: 1px solid rgba(103, 232, 249, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease, border-color 0.4s ease;
   cursor: default;
   position: relative;
   overflow: hidden;
+  animation: statFadeUp 0.55s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+.stat-card--float {
+  animation: statFadeUp 0.55s cubic-bezier(0.23, 1, 0.32, 1) both,
+             statFloat 3.6s ease-in-out infinite 0.6s;
 }
 .stat-card::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, transparent 40%, rgba(245,197,24,0.08) 50%, transparent 60%);
+  background: linear-gradient(135deg, transparent 40%, rgba(103,232,249,0.06) 50%, transparent 60%);
   background-size: 200% 200%;
   animation: shimmer 3s ease-in-out infinite;
 }
 .stat-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 20px 50px rgba(245,197,24,0.2);
-  background: var(--accent);
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 20px 50px rgba(103,232,249,0.18), 0 0 0 1px rgba(103,232,249,0.3);
+  background: rgba(103, 232, 249, 0.1);
+  border-color: rgba(103, 232, 249, 0.4);
 }
-.stat-card:hover .stat-num { color: var(--black); }
-.stat-card:hover .stat-label { color: var(--dark); }
+.stat-card:hover .stat-num { color: var(--white); text-shadow: 0 0 16px var(--accent); }
+.stat-card:hover .stat-label { color: #e2e8f0; }
 .stat-num {
   display: block;
   font-size: 2.5rem;
@@ -706,12 +728,14 @@ canvas { display: block; }
   color: var(--accent);
   line-height: 1;
   margin-bottom: 0.5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 .stat-label {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
   font-weight: 600;
   color: #aaa;
+  transition: color 0.3s ease;
 }
 
 /* ===== RESUME ===== */
@@ -932,6 +956,29 @@ canvas { display: block; }
   flex-shrink: 0;
   width: 18px;
   text-align: center;
+}
+
+/* ===== CURRENTLY LEARNING BADGE ===== */
+.learning-section-header { display: flex; flex-direction: column; }
+.learning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.35);
+  border-radius: 20px;
+  padding: 0.25rem 0.75rem;
+  width: fit-content;
+  animation: learningPulse 2.5s ease-in-out infinite;
+}
+@keyframes learningPulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(74,222,128,0.3), 0 0 14px rgba(74,222,128,0.1); }
+  50%       { box-shadow: 0 0 10px rgba(74,222,128,0.5), 0 0 22px rgba(74,222,128,0.2); }
 }
 
 /* ===== SOFT TAGS ===== */
