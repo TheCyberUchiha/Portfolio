@@ -43,12 +43,11 @@ const scInner = document.getElementById('sc-inner');
 const scGlow = document.getElementById('sc-glow');
 
 const cubeRotations = {
-  'home':         { x: 0,   y: 0,    color: '#67e8f9' },
-  'about':        { x: 0,   y: -90,  color: '#a78bfa' },
-  'resume':       { x: 0,   y: -180, color: '#34d399' },
-  'portfolio':    { x: 0,   y: 90,   color: '#fde68a' },
-  'testimonials': { x: -90, y: 0,    color: '#f87171' },
-  'contact':      { x: 90,  y: 0,    color: '#fb923c' }
+  'home':      { x: 0,   y: 0,    color: '#67e8f9' },
+  'about':     { x: 0,   y: -90,  color: '#a78bfa' },
+  'resume':    { x: 0,   y: -180, color: '#34d399' },
+  'portfolio': { x: 0,   y: 90,   color: '#fde68a' },
+  'contact':   { x: 90,  y: 0,    color: '#fb923c' }
 };
 
 function updateCubeRotation(sectionId) {
@@ -78,7 +77,7 @@ function revealSection(section) {
 
   /* Stagger children */
   const cards = section.querySelectorAll(
-    '.stat-card, .port-card, .testi-card, .timeline-item, .cert-pill, .contact-item, .hl-item'
+    '.stat-card, .port-card, .timeline-item, .cert-pill, .contact-item, .hl-item'
   );
   cards.forEach((card, i) => {
     card.style.opacity = '0';
@@ -135,7 +134,7 @@ const statsObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       const nums = entry.target.querySelectorAll('.stat-num');
       const data = [
-        { val: 5,  suffix: '+' },
+        { val: 3,  suffix: '+' },
         { val: 7,  suffix: '+' },
         { val: 2,  suffix: '+' },
         { val: 1,  suffix: '' },
@@ -302,7 +301,7 @@ document.querySelectorAll('.btn-primary').forEach(btn => {
 });
 
 /* ===== TILT EFFECT ON CARDS ===== */
-document.querySelectorAll('.testi-card, .stat-card').forEach(card => {
+document.querySelectorAll('.stat-card').forEach(card => {
   card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -313,6 +312,15 @@ document.querySelectorAll('.testi-card, .stat-card').forEach(card => {
     card.style.transform = '';
   });
 });
+
+/* ===== STAT CARD FLOAT ANIMATION ===== */
+(function initStatCardFloat() {
+  const statCards = document.querySelectorAll('.stat-card');
+  statCards.forEach((card, i) => {
+    card.style.animationDelay = `${i * 0.18}s`;
+    card.classList.add('stat-card--float');
+  });
+})();
 
 /* ===== SCROLL PARALLAX (Cards & Text) ===== */
 const parallaxElements = document.querySelectorAll('[data-scroll-speed]');
@@ -350,71 +358,6 @@ function animateParallax() {
   requestAnimationFrame(animateParallax);
 }
 requestAnimationFrame(animateParallax);
-
-/* ===== PARTICLE CANVAS ===== */
-(function createParticles() {
-  const canvas = document.createElement('canvas');
-  canvas.id = 'particles';
-  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.4';
-  document.body.prepend(canvas);
-  const ctx = canvas.getContext('2d');
-  let w, h, particles = [];
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  class Particle {
-    constructor() { this.reset(); }
-    reset() {
-      this.x = Math.random() * w;
-      this.y = Math.random() * h;
-      this.size = Math.random() * 2 + 0.5;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.speedY = (Math.random() - 0.5) * 0.5;
-      this.opacity = Math.random() * 0.5 + 0.1;
-    }
-    update() {
-      this.x += this.speedX;
-      this.y += this.speedY;
-      if (this.x < 0 || this.x > w || this.y < 0 || this.y > h) this.reset();
-    }
-    draw() {
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(245, 197, 24, ${this.opacity})`;
-      ctx.fill();
-    }
-  }
-
-  for (let i = 0; i < 50; i++) particles.push(new Particle());
-
-  function animate() {
-    ctx.clearRect(0, 0, w, h);
-    particles.forEach(p => { p.update(); p.draw(); });
-    /* draw connections */
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 120) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(245, 197, 24, ${0.08 * (1 - dist / 120)})`;
-          ctx.lineWidth = 0.5;
-          ctx.stroke();
-        }
-      }
-    }
-    requestAnimationFrame(animate);
-  }
-  animate();
-})();
 
 /* ===== SMOOTH SECTION TITLE UNDERLINE ANIMATION ===== */
 document.querySelectorAll('.section-title').forEach(title => {
